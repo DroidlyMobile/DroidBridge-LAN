@@ -1,4 +1,4 @@
-# Building DroidBridge LAN
+# Building Masterix LAN
 
 ## Requirements
 

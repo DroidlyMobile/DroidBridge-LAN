@@ -12,7 +12,7 @@
 
 ## Packaging checks
 
-- [x] DroidBridge LAN has its own icon/branding.
+- [x] Masterix LAN has its own icon/branding.
 - [x] The release JAR does not contain a nested e4mc JAR.
 - [x] The release JAR does not contain `link/e4mc/*` classes.
 - [x] `fabric.mod.json` declares e4mc as a required dependency.
@@ -22,7 +22,7 @@
 
 ## CurseForge page checks
 
-- [ ] Project name is **DroidBridge LAN**.
+- [ ] Project name is **Masterix LAN**.
 - [ ] Short description identifies it as an Android compatibility add-on for e4mc.
 - [ ] Upstream e4mc is credited and linked.
 - [ ] e4mc is configured as a required dependency rather than bundled.

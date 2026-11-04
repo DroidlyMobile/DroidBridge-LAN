@@ -20,7 +20,7 @@ required = {
     "assets/droidbridgelan/icon.png",
     "META-INF/LICENSE-DroidBridge-LAN.txt",
     "META-INF/THIRD_PARTY_NOTICES.md",
-    "META-INF/droidbridge/android-arm64-v8a/libnetty_quiche.so",
+    "META-INF/masterix-lan/android-arm64-v8a/libnetty_quiche.so",
     "META-INF/licenses/netty-Apache-2.0.txt",
     "META-INF/licenses/netty-NOTICE.txt",
     "META-INF/licenses/quiche-BSD.txt",
@@ -44,10 +44,10 @@ with zipfile.ZipFile(jar) as z:
     if "e4mc" not in meta.get("depends", {}):
         raise SystemExit("fabric.mod.json does not require e4mc")
     pre = meta.get("entrypoints", {}).get("preLaunch", [])
-    if "ca.dnamobile.droidbridgelan.DroidBridgeLanPreLaunch" not in pre:
+    if "com.abhaythemaster.masterixlan.MasterixLanPreLaunch" not in pre:
         raise SystemExit("preLaunch compatibility entrypoint is missing")
 
-    native = z.read("META-INF/droidbridge/android-arm64-v8a/libnetty_quiche.so")
+    native = z.read("META-INF/masterix-lan/android-arm64-v8a/libnetty_quiche.so")
     native_sha = hashlib.sha256(native).hexdigest()
     if native_sha != EXPECTED_NATIVE_SHA256:
         raise SystemExit(f"Native SHA mismatch: {native_sha}")

@@ -1,4 +1,4 @@
-DroidBridge LAN 0.4.1
+Masterix LAN 0.4.1
 Independent DroidBridge Android compatibility add-on by DNA Mobile.
 
 Requires the official e4mc mod as a separate Fabric dependency.

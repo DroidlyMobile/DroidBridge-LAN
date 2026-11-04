@@ -2,7 +2,7 @@
 
 ## Reporting
 
-Report DroidBridge LAN security issues privately to the project owner before opening a public issue when practical.
+Report Masterix LAN security issues privately to the project owner before opening a public issue when practical.
 
 ## Native integrity
 

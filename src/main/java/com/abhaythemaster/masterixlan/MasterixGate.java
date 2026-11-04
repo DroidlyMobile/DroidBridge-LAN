@@ -1,4 +1,4 @@
-package ca.dnamobile.droidbridgelan;
+package com.abhaythemaster.masterixlan;
 
 import java.net.URL;
 import java.util.Locale;
@@ -6,11 +6,11 @@ import java.util.Locale;
 /**
  * Keeps DroidBridge-specific native/bootstrap behavior out of unrelated Java runtimes.
  */
-final class DroidBridgeGate {
+final class MasterixGate {
     static final String RELEASE_PACKAGE = "com.abhaythemaster.masterixplus";
     static final String DEBUG_PACKAGE = "com.abhaythemaster.masterixplus.debug";
 
-    private DroidBridgeGate() {}
+    private MasterixGate() {}
 
     static Verification verify() {
         String os = value("os.name").toLowerCase(Locale.ROOT);

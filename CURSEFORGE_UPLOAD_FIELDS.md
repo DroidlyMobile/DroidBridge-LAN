@@ -1,6 +1,6 @@
 # CurseForge upload fields
 
-**Project name:** DroidBridge LAN  
+**Project name:** Masterix LAN  
 **Suggested slug:** `droidbridge-lan`  
 **License:** MIT  
 **Mod loader:** Fabric  
@@ -13,4 +13,4 @@
 
 Set **e4mc** as a **required dependency** on the CurseForge project/file when the CurseForge dependency UI provides that option.
 
-Do not upload a bundled or renamed copy of e4mc as part of the DroidBridge LAN file. Users should install the official e4mc project separately.
+Do not upload a bundled or renamed copy of e4mc as part of the Masterix LAN file. Users should install the official e4mc project separately.

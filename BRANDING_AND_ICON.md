@@ -1,6 +1,6 @@
 # Branding and icon
 
-Use **DroidBridge LAN** as the project name.
+Use **Masterix LAN** as the project name.
 
 The approved project icon is included at:
 

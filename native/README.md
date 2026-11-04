@@ -1,6 +1,6 @@
 # Android Netty-Quiche native
 
-DroidBridge LAN bundles an Android/Bionic arm64-v8a build of `libnetty_quiche.so` for the **exact** Netty QUIC fork used by e4mc 6.2.1:
+Masterix LAN bundles an Android/Bionic arm64-v8a build of `libnetty_quiche.so` for the **exact** Netty QUIC fork used by e4mc 6.2.1:
 
 `0.0.74.Final.e4mc.1`
 

@@ -1,6 +1,6 @@
 {
   "required": true,
-  "package": "ca.dnamobile.droidbridgelan.mixin",
+  "package": "com.abhaythemaster.masterixlan.mixin",
   "compatibilityLevel": "JAVA_17",
   "minVersion": "0.8",
   "mixins": ["ServerConnectionListenerMixin"],

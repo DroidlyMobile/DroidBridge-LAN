@@ -20,15 +20,15 @@ public *.e4mc.link hostname
 remote Minecraft Java client
 ```
 
-DroidBridge LAN does not forward the Minecraft TCP socket through a DNA Mobile server in the public configuration. e4mc owns the public domain and relay path.
+Masterix LAN does not forward the Minecraft TCP socket through a DNA Mobile server in the public configuration. e4mc owns the public domain and relay path.
 
 ## Android native bootstrap
 
-`AndroidE4mcNativeBootstrap` extracts the bundled native into app-private temporary/cache storage, checks that it is ELF64 little-endian AArch64, validates its SHA-256, and sets `link.e4mc.native_path` before Quiche loads. DroidBridge LAN deliberately does not call `System.load()` itself; the existing DroidBridge LibPatcher e4mc bridge owns the actual load so Android sees a single native-library classloader owner.
+`AndroidE4mcNativeBootstrap` extracts the bundled native into app-private temporary/cache storage, checks that it is ELF64 little-endian AArch64, validates its SHA-256, and sets `link.e4mc.native_path` before Quiche loads. Masterix LAN deliberately does not call `System.load()` itself; the existing DroidBridge LibPatcher e4mc bridge owns the actual load so Android sees a single native-library classloader owner.
 
 ## Dialtone/iroh
 
-e4mc 6.2.1 can additionally use Dialtone/iroh. Its supplied Linux ARM64 JNI native is not Android/Bionic compatible. DroidBridge LAN therefore disables the host/player Dialtone flags in memory on DroidBridge and keeps classic Quiclime enabled.
+e4mc 6.2.1 can additionally use Dialtone/iroh. Its supplied Linux ARM64 JNI native is not Android/Bionic compatible. Masterix LAN therefore disables the host/player Dialtone flags in memory on DroidBridge and keeps classic Quiclime enabled.
 
 ## Config recovery
 

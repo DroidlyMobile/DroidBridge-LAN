@@ -1,4 +1,4 @@
-package ca.dnamobile.droidbridgelan;
+package com.abhaythemaster.masterixlan;
 
 import java.io.Reader;
 import java.io.StringReader;
@@ -37,10 +37,10 @@ final class E4mcConfigRecovery {
             } catch (Exception atomicMoveFailed) {
                 Files.move(config, backup, StandardCopyOption.REPLACE_EXISTING);
             }
-            DroidBridgeLanMod.log("recovered malformed e4mc config before upstream initialization; "
+            MasterixLanMod.log("recovered malformed e4mc config before upstream initialization; "
                     + "preserved broken file at " + backup + " reason=" + validation.reason);
         } catch (Throwable t) {
-            DroidBridgeLanMod.log("e4mc config preflight could not complete: " + summarize(t));
+            MasterixLanMod.log("e4mc config preflight could not complete: " + summarize(t));
         }
     }
 

@@ -1,4 +1,4 @@
-package ca.dnamobile.droidbridgelan;
+package com.abhaythemaster.masterixlan;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
@@ -14,7 +14,7 @@ import java.util.Locale;
 /**
  * Android native bootstrap for e4mc 6.2.1 / Netty-Quiche 0.0.74.Final.e4mc.1.
  *
- * DroidBridge LAN bundles only the Android/Bionic Netty-Quiche native that matches
+ * Masterix LAN bundles only the Android/Bionic Netty-Quiche native that matches
  * e4mc 6.2.1. It does not bundle or modify e4mc itself.
  *
  * The native is staged before e4mc initializes and exposed through the
@@ -26,7 +26,7 @@ import java.util.Locale;
 public final class AndroidE4mcNativeBootstrap {
     private static final String ABI_VERSION = "0.0.74.Final.e4mc.1";
     private static final String RESOURCE =
-            "META-INF/droidbridge/android-arm64-v8a/libnetty_quiche.so";
+            "META-INF/masterix-lan/android-arm64-v8a/libnetty_quiche.so";
     private static final String EXPECTED_SHA256 =
             "c6fa5084948d013d998d908ec4d5733f878c613107121a38594ef53e29f882fa";
     private static final Object LOCK = new Object();
@@ -41,7 +41,7 @@ public final class AndroidE4mcNativeBootstrap {
             try {
                 return prepareInternal();
             } catch (Throwable t) {
-                DroidBridgeLanMod.log("e4mc Android native bootstrap failed: " + summarize(t));
+                MasterixLanMod.log("e4mc Android native bootstrap failed: " + summarize(t));
                 return false;
             }
         }
@@ -70,11 +70,11 @@ public final class AndroidE4mcNativeBootstrap {
             File file = new File(override);
             if (isExpectedNative(file)) {
                 ready = true;
-                DroidBridgeLanMod.log("e4mc Android native override accepted path="
+                MasterixLanMod.log("e4mc Android native override accepted path="
                         + file.getAbsolutePath() + " sha256=" + EXPECTED_SHA256);
                 return true;
             }
-            DroidBridgeLanMod.log("e4mc Android native override ignored because it does not match "
+            MasterixLanMod.log("e4mc Android native override ignored because it does not match "
                     + "the pinned arm64-v8a build: " + override);
         }
 
@@ -86,7 +86,7 @@ public final class AndroidE4mcNativeBootstrap {
         File nativeFile = new File(dir, "libnetty_quiche.so");
         if (isExpectedNative(nativeFile)) {
             configure(nativeFile);
-            DroidBridgeLanMod.log("e4mc Android bundled native cache accepted path="
+            MasterixLanMod.log("e4mc Android bundled native cache accepted path="
                     + nativeFile.getAbsolutePath() + " sha256=" + EXPECTED_SHA256);
             return true;
         }
@@ -135,7 +135,7 @@ public final class AndroidE4mcNativeBootstrap {
             Files.move(part.toPath(), nativeFile.toPath(), StandardCopyOption.REPLACE_EXISTING);
         }
         configure(nativeFile);
-        DroidBridgeLanMod.log("e4mc Android bundled native staged path="
+        MasterixLanMod.log("e4mc Android bundled native staged path="
                 + nativeFile.getAbsolutePath() + " bytes=" + nativeFile.length()
                 + " sha256=" + EXPECTED_SHA256);
         return true;
@@ -160,7 +160,7 @@ public final class AndroidE4mcNativeBootstrap {
     private static File nativeDir() {
         String base = System.getProperty("java.io.tmpdir");
         if (base == null || base.trim().isEmpty()) base = System.getProperty("user.home", ".");
-        return new File(new File(base, "droidbridge-e4mc-native"), ABI_VERSION);
+        return new File(new File(base, "masterix-e4mc-native"), ABI_VERSION);
     }
 
     private static boolean isAarch64Elf(File file) {

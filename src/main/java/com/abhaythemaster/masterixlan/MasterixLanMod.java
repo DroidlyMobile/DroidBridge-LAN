@@ -1,4 +1,4 @@
-package ca.dnamobile.droidbridgelan;
+package com.abhaythemaster.masterixlan;
 
 import net.fabricmc.api.ModInitializer;
 
@@ -6,12 +6,12 @@ import net.fabricmc.api.ModInitializer;
  * DroidBridge compatibility add-on for the official e4mc mod.
  *
  * e4mc owns the tunnel, domain assignment, and Minecraft networking lifecycle.
- * DroidBridge LAN only provides the Android-native compatibility required by
+ * Masterix LAN only provides the Android-native compatibility required by
  * DroidBridge and disables e4mc's Android-incompatible Dialtone/iroh path at
  * runtime. The installed e4mc JAR is not modified or redistributed.
  */
-public final class DroidBridgeLanMod implements ModInitializer {
-    public static final String MOD_ID = "droidbridge_lan";
+public final class MasterixLanMod implements ModInitializer {
+    public static final String MOD_ID = "masterix_lan";
     public static final String MOD_VERSION = "0.4.1";
 
     private static volatile boolean allowed;
@@ -19,7 +19,7 @@ public final class DroidBridgeLanMod implements ModInitializer {
 
     @Override
     public void onInitialize() {
-        DroidBridgeGate.Verification verification = DroidBridgeGate.verify();
+        MasterixGate.Verification verification = MasterixGate.verify();
         allowed = verification.allowed;
         if (!allowed) {
             log("DroidBridge-only gate denied: " + verification.reason);
@@ -65,7 +65,7 @@ public final class DroidBridgeLanMod implements ModInitializer {
 
     private static void disableE4mcDialtoneOnAndroid() {
         try {
-            ClassLoader loader = DroidBridgeLanMod.class.getClassLoader();
+            ClassLoader loader = MasterixLanMod.class.getClassLoader();
             Class<?> configClass = Class.forName("link.e4mc.Config", true, loader);
             Object config = configClass.getField("INSTANCE").get(null);
             boolean hostDisabled = setTrackedOverrideFalse(configClass, config, "dialtoneHostEnabled");
@@ -84,7 +84,7 @@ public final class DroidBridgeLanMod implements ModInitializer {
             Class<?> trackedValueClass = Class.forName(
                     "folk.sisby.kaleido.lib.quiltconfig.api.values.TrackedValue",
                     false,
-                    DroidBridgeLanMod.class.getClassLoader());
+                    MasterixLanMod.class.getClassLoader());
             trackedValueClass.getMethod("setOverride", Object.class).invoke(trackedValue, Boolean.FALSE);
             return true;
         } catch (Throwable t) {
@@ -95,7 +95,7 @@ public final class DroidBridgeLanMod implements ModInitializer {
 
     private static boolean detectE4mc() {
         try {
-            ClassLoader loader = DroidBridgeLanMod.class.getClassLoader();
+            ClassLoader loader = MasterixLanMod.class.getClassLoader();
             Class.forName("link.e4mc.E4mcClient", false, loader);
             Class.forName("link.e4mc.QuiclimeSession", false, loader);
             return true;
@@ -110,6 +110,6 @@ public final class DroidBridgeLanMod implements ModInitializer {
     }
 
     public static void log(String message) {
-        DbLanLog.info(message);
+        MasterixLanLog.info(message);
     }
 }

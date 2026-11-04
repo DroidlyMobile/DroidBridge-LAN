@@ -1,6 +1,6 @@
-# DroidBridge LAN
+# Masterix LAN
 
-**DroidBridge LAN** is an Android compatibility add-on for the official **e4mc** mod when running Minecraft Java through DroidBridge.
+**Masterix LAN** is an Android compatibility add-on for the official **e4mc** mod when running Minecraft Java through DroidBridge.
 
 Open a single-player world to LAN normally and e4mc will provide a public address that other Java Edition players can use to connect from another network — without manual port forwarding.
 
@@ -22,18 +22,18 @@ Open a single-player world to LAN normally and e4mc will provide a public addres
 - **e4mc 6.2.1+modern or a compatible newer release**
 - Android ARM64
 
-Install **DroidBridge LAN** and the official **e4mc** mod in the same Fabric instance. Then use **Open to LAN** normally.
+Install **Masterix LAN** and the official **e4mc** mod in the same Fabric instance. Then use **Open to LAN** normally.
 
 ## e4mc credit
 
-DroidBridge LAN is an independent compatibility add-on for the open-source **e4mc** project by Skye and its contributors.
+Masterix LAN is an independent compatibility add-on for the open-source **e4mc** project by Skye and its contributors.
 
 Upstream project: https://github.com/vgskye/e4mc-minecraft-architectury
 
-DroidBridge LAN does not redistribute or modify the installed e4mc JAR. e4mc remains a separate project under its upstream MIT License.
+Masterix LAN does not redistribute or modify the installed e4mc JAR. e4mc remains a separate project under its upstream MIT License.
 
-DroidBridge LAN is not affiliated with or endorsed by the e4mc maintainers.
+Masterix LAN is not affiliated with or endorsed by the e4mc maintainers.
 
 ## Source
 
-DroidBridge LAN is open source. The repository contains the Android compatibility code and the source/build workflow used for the bundled Android Netty-Quiche native.
+Masterix LAN is open source. The repository contains the Android compatibility code and the source/build workflow used for the bundled Android Netty-Quiche native.
